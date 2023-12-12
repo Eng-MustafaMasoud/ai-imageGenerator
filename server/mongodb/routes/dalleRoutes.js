@@ -3,8 +3,6 @@ import * as dotenv from 'dotenv'
 import cors from 'cors'
 
 import OpenAI from 'openai';
-const app =express()
-app.use(cors());
 
 dotenv.config()
 const router =express.Router()
@@ -15,7 +13,7 @@ const openai = new OpenAI({
 
 router.route('/').post(async(req,res)=>{
    try {
-        res.set('Access-Control-Allow-Origin', 'https://ai-image-generator-flax.vercel.app/');
+     
 
        const {prompt}=req.body
        const aiResponse=await openai.images.generate(
