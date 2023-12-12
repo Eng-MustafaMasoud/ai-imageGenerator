@@ -5,8 +5,7 @@ import cors from 'cors'
 import Post from '../model/post.js';
 
 
-const app =express()
-app.use(cors());
+
 
 dotenv.config();
 
