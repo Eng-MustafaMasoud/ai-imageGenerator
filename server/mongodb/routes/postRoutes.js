@@ -21,6 +21,8 @@ cloudinary.config({
 
 router.route('/').get(async (req, res) => {
   try {
+        res.set('Access-Control-Allow-Origin', 'https://ai-image-generator-flax.vercel.app/');
+
     const posts = await Post.find({});
     res.status(200).json({ success: true, data: posts });
   } catch (err) {
@@ -30,6 +32,8 @@ router.route('/').get(async (req, res) => {
 
 router.route('/').post(async(req, res) => {
   try {
+        res.set('Access-Control-Allow-Origin', 'https://ai-image-generator-flax.vercel.app/');
+
     const { name, prompt, photo } = req.body;
     const photoUrl = await cloudinary.uploader.upload(photo);
 
