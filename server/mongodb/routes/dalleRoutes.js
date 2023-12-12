@@ -15,7 +15,8 @@ const openai = new OpenAI({
 
 router.route('/').post(async(req,res)=>{
    try {
-    
+        res.set('Access-Control-Allow-Origin', 'https://ai-image-generator-flax.vercel.app/');
+
        const {prompt}=req.body
        const aiResponse=await openai.images.generate(
        { 
