@@ -26,7 +26,7 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://ai-images-u5ww.onrender.com/api/v1/post', {
+      const response = await fetch('https://ai-gen-8sth.onrender.com/api/v1/post', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
